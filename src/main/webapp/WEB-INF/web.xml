@@ -38,4 +38,16 @@
 		<servlet-name>Rest</servlet-name>
 		<url-pattern>/resources/*</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Filter to secure Jersey (JAX-RS) services -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>
+            org.springframework.web.filter.DelegatingFilterProxy
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/resources/*</url-pattern>
+    </filter-mapping> 
 </web-app>

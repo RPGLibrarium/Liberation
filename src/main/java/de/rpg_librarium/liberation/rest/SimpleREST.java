@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -21,6 +23,7 @@ public class SimpleREST {
 	
 	@GET
 	@Path("/{name}")
+	@Secured({"USER"})
 	@Transactional
 	public String getGreeting(@PathVariable String name) {
         Item item = new Item();
