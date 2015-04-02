@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import de.rpg_librarium.liberation.domain.entity.Item;
 
 @Component
-@Path("/")
+@Path("/test")
 public class SimpleREST {
 	
 	@PersistenceContext
