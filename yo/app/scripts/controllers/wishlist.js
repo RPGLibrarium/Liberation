@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name liberationApp.controller:AboutCtrl
+ * @name liberationApp.controller:WishlistCtrl
  * @description
- * # AboutCtrl
+ * # WishlistCtrl
  * Controller of the liberationApp
  */
 angular.module('liberationApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('WishlistCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

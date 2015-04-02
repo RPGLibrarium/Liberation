@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 describe('Controller: MainCtrl', function () {
 
@@ -20,3 +20,4 @@ describe('Controller: MainCtrl', function () {
     expect(scope.awesomeThings.length).toBe(3);
   });
 });
+*/

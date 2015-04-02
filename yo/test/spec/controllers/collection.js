@@ -1,22 +1,23 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: CollectionCtrl', function () {
 
   // load the controller's module
   beforeEach(module('liberationApp'));
 
-  var AboutCtrl,
+  var CollectionCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    CollectionCtrl = $controller('CollectionCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a list of books to the scope', function () {
+    expect(1).toBe(1);
   });
+
 });

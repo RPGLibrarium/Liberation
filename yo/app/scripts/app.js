@@ -20,13 +20,21 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/collection', {
+        templateUrl: 'views/collection.html',
+        controller: 'CollectionCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/wishlist', {
+        templateUrl: 'views/wishlist.html',
+        controller: 'WishlistCtrl'
+      })
+      .when('/account', {
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl'
+      })
+      .when('/administration', {
+        templateUrl: 'views/administration.html',
+        controller: 'AdministrationCtrl'
       })
       .otherwise({
         redirectTo: '/'

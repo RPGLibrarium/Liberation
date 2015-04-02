@@ -1,88 +1,81 @@
 package de.rpg_librarium.liberation.domain.entity;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
- * An item in an order
+ * An item in the libraries inventory
  */
 @Entity
-public class Item {
+public class Item implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8055426468885812056L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
+	
 	@ManyToOne
-	private Order order;
+	private ItemType type;
+	
+	private String condition_descr;
+	
+	@ManyToOne
+	private User owner;
+	@ManyToOne
+	private User holder;
 
-	private String product;
-
-	private double price;
-
-	private int quantity;
-
-	/**
-	 * @return the order
-	 */
-	public Order getOrder() {
-		return order;
-	}
-
-	/**
-	 * @return the product
-	 */
-	public String getProduct() {
-		return product;
-	}
-
-	/**
-	 * @param product
-	 *            the product to set
-	 */
-	public void setProduct(String product) {
-		this.product = product;
-	}
-
-	/**
-	 * @return the price
-	 */
-	public double getPrice() {
-		return price;
-	}
-
-	/**
-	 * @param price
-	 *            the price to set
-	 */
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	/**
-	 * @return the quantity
-	 */
-	public int getQuantity() {
-		return quantity;
-	}
-
-	/**
-	 * @param quantity
-	 *            the quantity to set
-	 */
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	/**
-	 * @return the id
-	 */
 	public Long getId() {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public ItemType getType() {
+		return type;
+	}
+
+	public void setType(ItemType type) {
+		this.type = type;
+	}
+
+	public String getConditionDescr() {
+		return condition_descr;
+	}
+
+	public void setConditionDescr(String condition) {
+		this.condition_descr = condition;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	public User getHolder() {
+		return holder;
+	}
+
+	public void setHolder(User holder) {
+		this.holder = holder;
+	}
+	
+	
 }
