@@ -1,0 +1,33 @@
+<div class="row marketing">
+	<h4>Testview</h4>
+
+	Input new Book here: 
+	<form class="input-group" ng-submit="setTitle()" >
+		<input type="text" class="form-control" ng-model="formNewTitle" placeholder="title">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"> Submit</button>
+		</span>
+	</form><!-- /input-group -->
+	<form class="input-group" ng-submit="setAuthor()">
+		<input type="text" class="form-control" ng-model="formNewAuthor" placeholder="author">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"> Submit</button>
+		</span>
+	</form><!-- /input-group -->
+
+	<form class="input-group" ng-submit="setIsbn()">
+		<input type="text" class="form-control" ng-model="formNewIsbn" placeholder="ISBN">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"> Submit</button>
+		</span>
+	</form><!-- /input-group -->
+
+	Data:
+	<ul class="list-group">
+		<li class="list-group-item">Title: {{newBook.title}} </li>
+		<li class="list-group-item">Author: {{newBook.author}} </li>
+		<li class="list-group-item">ISBN: {{newBook.isbn}}</li>
+	</ul>
+
+	<button type="button" class="btn btn-default" ng-click="submitToServer()">Submit to Server!</button>
+</div><!-- /row marketing -->
