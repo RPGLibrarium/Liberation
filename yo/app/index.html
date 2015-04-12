@@ -19,36 +19,61 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="MasterpageCtrl">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Liberation</a>
+          <button type="button" class="navbar-toggle collapsed" ng-click="navbarMain.isCollapsed = !navbarMain.isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="navbarMain.isCollapsed" class="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a ng-href="#/collection">Büchersammlung</a></li>
+            <li><a ng-href="#/wishlist">Wunschliste</a></li>
+            <li><a ng-href="#/administration">Benutzerverwaltung</a></li>
+
+            <!--Dropdown: Mein Konto if loginStatus=true-->
+            <li ng-if="loginStatus == true" class="dropdown" dropdown is-open="btnMeinKonto.isopen">
+              <a ng-href="#" class="dropdown-toggle" dropdown-toggle>Mein Konto<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menuMeinKonto">
+                <li><a href="#">Login</a></li>
+                <li><a href="#/account">Anmelden</a></li>
+                <li><a href="#">Stuff</a></li>
+              </ul>
+            </li>
+            <!--Dropdown: Login if loginStatus=false-->
+            <!--Fixme: Loginmenu musst stay open while typing into Form-->
+            <li ng-if="loginStatus == false" class="dropdown" dropdown is-open="btnLogin.isopen">
+              <a ng-href="#" class="dropdown-toggle" dropdown-toggle>Login<span class="caret"></span></a>
+              <div class="dropdown-menu" role="menuLogin">
+                <form class="form" id="formLogin">
+                  <input type="text" class="form-control input-sm" placeholder="Benutzername">
+                  <input type="text" class="form-control input-sm" placeholder="Password">
+                  <button class="btn btn-primary btn-sm" type="button">Login</button>
+                  </span>
+                </form>
+              </div> <!--dropdown-menu-->
+            </li>
+            <li><a ng-href="#">Kontakt</a></li>
+          </ul>
+        </div><!--navbar-collapse-->
+      </div><!--container-fluie-->
+    </nav>
+
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/collection">Büchersammlung</a></li>
-          <li><a ng-href="#/wishlist">Wunschliste</a></li>
-          <li><a ng-href="#/account">Mein Konto</a></li>
-          <li><a ng-href="#/administration">Benutzerverwaltung</a></li>
-          <li><a ng-href="#">Kontakt</a></li>
-        </ul>
-        <h3 class="text-muted">Liberation</h3>
-      </div>
-
       <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> RPG Librarium Aachen e.V.</p>
-      </div>
     </div>
 
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+    <div class="footer">
+      <p><span class="glyphicon glyphicon-heart"></span> RPG Librarium Aachen e.V.</p>
+    </div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -76,6 +101,11 @@
         <script src="scripts/controllers/wishlist.js"></script>
         <script src="scripts/controllers/account.js"></script>
         <script src="scripts/controllers/administration.js"></script>
+        <script src="scripts/controllers/masterpage.js"></script>
+        <!-- Bootstrap Angular Scripts manually included due to version incompatibilty via Bower. 
+        Add "angular-bower" and "angular-ui" to bower.json if Problems are solved. Recheck for v0.13 -->
+        <script src="bootstrap/js/ui-bootstrap.js"></script>
+        <script src="bootstrap/js/ui-bootstrap-tpls.js"></script>
         <!-- endbuild -->
 </body>
 </html>
