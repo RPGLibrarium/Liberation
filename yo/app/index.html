@@ -40,29 +40,18 @@
             <li class="active"><a ng-href="#/collection">Büchersammlung</a></li>
             <li><a ng-href="#/wishlist">Wunschliste</a></li>
             <li><a ng-href="#/administration">Benutzerverwaltung</a></li>
-
+            <!--Login if loginStatus=false-->
+            <li><a ng-if="loginStatus == false" ng-href="#/login">Login</a></li>
             <!--Dropdown: Mein Konto if loginStatus=true-->
             <li ng-if="loginStatus == true" class="dropdown" dropdown is-open="btnMeinKonto.isopen">
               <a ng-href="#" class="dropdown-toggle" dropdown-toggle>Mein Konto<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menuMeinKonto">
-                <li><a href="#">Login</a></li>
-                <li><a href="#/account">Anmelden</a></li>
+                <li><a ng-click="loginStatus = false" href="#/login">Abmelden</a></li>
+                <li><a href="#/account">Konto öffnen</a></li>
                 <li><a href="#">Stuff</a></li>
               </ul>
             </li>
             <!--Dropdown: Login if loginStatus=false-->
-            <!--Fixme: Loginmenu musst stay open while typing into Form-->
-            <li ng-if="loginStatus == false" class="dropdown" dropdown is-open="btnLogin.isopen">
-              <a ng-href="#" class="dropdown-toggle" dropdown-toggle>Login<span class="caret"></span></a>
-              <div class="dropdown-menu" role="menuLogin">
-                <form class="form" id="formLogin">
-                  <input type="text" class="form-control input-sm" placeholder="Benutzername">
-                  <input type="text" class="form-control input-sm" placeholder="Password">
-                  <button class="btn btn-primary btn-sm" type="button">Login</button>
-                  </span>
-                </form>
-              </div> <!--dropdown-menu-->
-            </li>
             <li><a ng-href="#">Kontakt</a></li>
           </ul>
         </div><!--navbar-collapse-->
@@ -108,6 +97,7 @@
         <script src="scripts/controllers/account.js"></script>
         <script src="scripts/controllers/administration.js"></script>
         <script src="scripts/controllers/masterpage.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- Bootstrap Angular Scripts manually included due to version incompatibilty via Bower. 
         Add "angular-bower" and "angular-ui" to bower.json if Problems are solved. Recheck for v0.13 
         <script src="bootstrap/js/ui-bootstrap.js"></script>
