@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-darkly.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bootstrap/css/sb-admin-2.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
     <!-- endbuild -->
   </head>
   <body ng-app="liberationApp">
@@ -84,6 +86,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -92,6 +95,9 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -103,9 +109,11 @@
         <script src="scripts/controllers/administration.js"></script>
         <script src="scripts/controllers/masterpage.js"></script>
         <!-- Bootstrap Angular Scripts manually included due to version incompatibilty via Bower. 
-        Add "angular-bower" and "angular-ui" to bower.json if Problems are solved. Recheck for v0.13 -->
+        Add "angular-bower" and "angular-ui" to bower.json if Problems are solved. Recheck for v0.13 
         <script src="bootstrap/js/ui-bootstrap.js"></script>
         <script src="bootstrap/js/ui-bootstrap-tpls.js"></script>
+        -->
+        <script src="bootstrap/js/sb-admin-2.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -15,8 +15,5 @@ angular.module('liberationApp')
   	//Status of menuentry "Mein Konto"
   	$scope.btnMeinKonto = {isopen: false};
 
-  	//Status of menuentry "Login"
-  	$scope.btnMeinKonto = {isopen: false};
-
   	$scope.loginStatus = false;
   });
